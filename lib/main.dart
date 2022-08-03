@@ -25,10 +25,10 @@ class MyPage extends StatelessWidget {
           title: Text('Snack Bar'),
           centerTitle: true,
         ),
-        body: MySnackBar()
-    );
+        body: MySnackBar());
   }
 }
+
 class MySnackBar extends StatelessWidget {
   const MySnackBar({Key? key}) : super(key: key);
 
@@ -37,11 +37,18 @@ class MySnackBar extends StatelessWidget {
     return Center(
       child: RaisedButton(
         child: Text('Show me'),
-        onPressed: (){
-          Scaffold.of(context).showSnackBar(SnackBar(content: Text('Hello!')));
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text(
+              'Hello!',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.teal,
+            duration: Duration(milliseconds: 1000),
+          ));
         },
       ),
     );
   }
 }
-
